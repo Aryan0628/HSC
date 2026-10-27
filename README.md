@@ -1,720 +1,369 @@
-# UrbanFlow Code Migration & Work Division Schedule
+# UrbanFlow: The Integrated AI-Powered Civic Management Suite
 
-This document serves as the workload partition and daily pushing schedule for migrating the **UrbanFlow** codebase to the new repository. 
-
-To ensure **zero merge conflicts**, the codebase has been strictly partitioned into mutually exclusive file sets. Each teammate will commit and push only their assigned files using their specific branch at their designated time slot.
-
----
-
-## The Core Strategy
-*   **Branches**: 4 development branches (`ishwar`, `arushi`, `shreyansh`, `aryan`) and `main`.
-*   **Time Slots**:
-    *   **Morning**: Ishwar (`ishwar` branch)
-    *   **Afternoon**: Arushi (`arushi` branch)
-    *   **Evening**: Shreyansh (`shreyansh` branch)
-    *   **Night**: Aryan (`aryan` branch)
-*   **Workflow**:
-    1. Checkout your branch: `git checkout <your_branch>`
-    2. Copy/paste the files allocated for the day from your local copy of the full repository.
-    3. Stage **only** the specified files: `git add <files>`
-    4. Commit using the exact command listed for the day: `git commit -m "<message>"`
-    5. Push to your remote branch.
-    6. **At the end (June 27)**, merge all 4 branches into `main` sequentially.
+**HSC (Hack for Social Cause) 2026**  
+**Team:** Ishwar | Aryan Gupta
 
 ---
 
-## Daily Schedule & Git Commands
+## Project Overview
 
-### Day 1: June 16, 2026
+UrbanFlow is a production-grade, AI-first civic operating system that transforms the relationship between citizens, municipal administration, local leaders, and field operations. Traditional urban governance suffers from fragmented communication, manual processes, reactive decision-making, and declining public trust. UrbanFlow addresses these systemic challenges by deploying a synchronized, three-tier ecosystem driven by Large Language Models (LLMs), multi-agent AI orchestration, real-time streaming, computer vision, satellite analytics, and geospatial intelligence.
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `client/src/ui/` (Common styling gallery, avatar, cards, inputs, buttons, team member portraits)
-*   **Git Commands**:
-    ```bash
-    git checkout -b ishwar
-    git add client/src/ui/
-    git commit -m "Ishwar [Day 1]: Add common client UI component files"
-    git push origin ishwar
-    ```
+Every layer of the system is designed around the principle that **AI should be the first responder** — triaging, classifying, routing, and verifying civic actions before a human ever needs to intervene.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/features/ngo/` (NGO web chat client, DonorInbox, portal layout, modals)
-*   **Git Commands**:
-    ```bash
-    git checkout -b arushi
-    git add client/src/pages/features/ngo/
-    git commit -m "Arushi [Day 1]: Add ngo web portal pages"
-    git push origin arushi
-    ```
-
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client/index.html`
-    *   `client/src/App.css`
-    *   `client/src/index.css`
-    *   `client/src/App.jsx`
-    *   `client/src/main.jsx`
-*   **Git Commands**:
-    ```bash
-    git checkout -b shreyansh
-    git add client/index.html client/src/App.css client/src/index.css client/src/App.jsx client/src/main.jsx
-    git commit -m "Shreyansh [Day 1]: Add client root layout and styling files"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   Root configuration and documentation: `UF.code-workspace`, `.gitignore`, `package.json`, `package-lock.json`, `instruction.md`, `README.md`, `test.txt`, `ReadmeMedia/`, `WorkDivision.md`
-*   **Git Commands**:
-    ```bash
-    git checkout -b aryan
-    git add UF.code-workspace .gitignore package.json package-lock.json instruction.md README.md test.txt ReadmeMedia/ WorkDivision.md
-    git commit -m "Aryan [Day 1]: Initialize repository configuration and documentation files"
-    git push origin aryan
-    ```
+The system is divided into three primary clients:
+1. **Citizen Portal** — AI-assisted mobile application for reporting, safety, employment, and community
+2. **Administrative Command Hub** — AI-driven web dashboard for municipal decision-makers and administrators
+3. **Field Workforce Interface** — Mobile/web task manager for on-ground workers with AI-verified proof of work
 
 ---
 
-### Day 2: June 17, 2026
+## Problem Statements Addressed
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   Client config and assets: `client/package.json`, `client/package-lock.json`, `client/vite.config.js`, `client/tailwind.config.js`, `client/eslint.config.js`, `client/jsconfig.json`, `client/vercel.json`, `client/README.md`, `client/example.env`, `client/public/background.jpg`, `client/public/icons/`, `client/public/vite.svg`, `client/src/assets/react.svg`
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add client/package.json client/package-lock.json client/vite.config.js client/tailwind.config.js client/eslint.config.js client/jsconfig.json client/vercel.json client/README.md client/example.env client/public/background.jpg client/public/icons/ client/public/vite.svg client/src/assets/react.svg
-    git commit -m "Ishwar [Day 2]: Add client package configs and bundler settings"
-    git push origin ishwar
-    ```
+### Category 1 & 2 — Urban Civic Services
+Citizens lack unified, intelligent channels for reporting grievances, accessing safe navigation, finding employment, and coordinating community resources. Municipal systems operate in silos with no AI layer to triage, route, or verify work — resulting in slow response, low transparency, and poor outcomes.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/features/kindshare-new/` (KindShare web portals: ngorenew, donor, receiver UI layouts)
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add client/src/pages/features/kindshare-new/
-    git commit -m "Arushi [Day 2]: Add kindshare ngo web portal pages"
-    git push origin arushi
-    ```
+### Category 3 — AI for Local Leadership, Decision Intelligence & Public Trust
+Local leaders operate at the front line of service delivery, yet most grassroots governance processes remain fragmented and unstructured. Citizen sentiment, grievance data, work completion status, and scheme progress are scattered across verbal complaints, paper records, and social media. UrbanFlow's **Civic Intelligence Dashboard** directly addresses this with:
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client/src/context/`
-    *   `client/src/auth/`
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client/src/context/ client/src/auth/
-    git commit -m "Shreyansh [Day 2]: Add client context providers and authentication components"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `client/src/firebase/` (Firebase client config setup)
-    *   `client/src/lib/` (Auth0 Axios links, standard API requests wrapper)
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client/src/firebase/ client/src/lib/
-    git commit -m "Aryan [Day 2]: Add client firebase integration and API middleware wrappers"
-    git push origin aryan
-    ```
+- AI-powered structuring of citizen issues from voice, text, image, and social media inputs
+- Intelligent issue prioritization using ML-based urgency, impact, and recurrence scoring
+- AI-validated geo-tagged, time-stamped verification of field work completion
+- Natural Language Processing (NLP) pipelines for social media sentiment and misinformation detection
+- AI-assisted generation of verified public communications and official announcements
+- Real-time dashboards exposing execution status and citizen trust indicators to local leadership
 
 ---
 
-### Day 3: June 18, 2026
+## Application Walkthrough
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/CivicHub.jsx`
-    *   `client/src/pages/fireAlert.jsx`
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add client/src/pages/CivicHub.jsx client/src/pages/fireAlert.jsx
-    git commit -m "Ishwar [Day 3]: Add CivicHub and fireAlert web pages"
-    git push origin ishwar
-    ```
+### Citizen Mobile Application
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/administration/KindShareAdmin.jsx`
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add client/src/pages/administration/KindShareAdmin.jsx
-    git commit -m "Arushi [Day 3]: Add KindShare Admin page"
-    git push origin arushi
-    ```
+The mobile interface is designed for accessibility and rapid response, enabling citizens to interact with AI-powered civic tools from a single unified surface.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client/src/components/Navbar.jsx`, `client/src/components/loginButton.jsx`, `client/src/components/CircularText.jsx`, `client/src/components/dashboard-map.jsx`, `client/src/pages/AboutUs.jsx`, `client/src/pages/Home.jsx`, `client/src/pages/Mission.jsx`, `client/src/pages/features.config.js`
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client/src/components/Navbar.jsx client/src/components/loginButton.jsx client/src/components/CircularText.jsx client/src/components/dashboard-map.jsx client/src/pages/AboutUs.jsx client/src/pages/Home.jsx client/src/pages/Mission.jsx client/src/pages/features.config.js
-    git commit -m "Shreyansh [Day 3]: Add client common components and dashboards"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/UserLiveTracking.jsx`
-    *   `client/src/pages/administration/Administration.jsx`
-    *   `client/src/pages/administration/SafetyReports.jsx`
-    *   `client/src/pages/administration/CivicAnalytics.jsx`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client/src/pages/UserLiveTracking.jsx client/src/pages/administration/Administration.jsx client/src/pages/administration/SafetyReports.jsx client/src/pages/administration/CivicAnalytics.jsx
-    git commit -m "Aryan [Day 3]: Add admin panels and analytics views"
-    git push origin aryan
-    ```
+<p align="center">
+  <img src="ReadmeMedia/React_Native/Dashboard/UrbanFlow_Dashboard.jpg" width="230" alt="UrbanFlow mobile home screen showing the main feature cards — SisterHood, CivicConnect, StreetGig, KindShare, and UrbanConnect — with AI-powered status indicators">
+  <img src="ReadmeMedia/React_Native/civic_connect/Report_Submission.jpeg" width="230" alt="CivicConnect AI grievance reporting screen with camera upload, auto-detected issue category badge, and severity indicator generated by AI">
+  <img src="ReadmeMedia/React_Native/SisterHood/SisterHood_Home.jpg" width="230" alt="SisterHood AI safe route navigation screen showing a color-coded risk heatmap overlaid on the map with an active SOS button">
+  <img src="ReadmeMedia/React_Native/StreetGig/StreetGig_Job_Reccomendation.jpg" width="230" alt="StreetGig job discovery screen with AI Match badges on job cards, distance indicators, and filter chips for time slot and budget">
+</p>
+<p align="center">
+  <em>Left to Right: Dashboard Home · CivicConnect AI Reporting · SisterHood Safe Navigation · StreetGig AI Job Matching</em>
+</p>
 
 ---
 
-### Day 4: June 19, 2026
+### Web Administration Panel
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/staff/` (infra, water, fire, waste, electricity web interfaces)
-    *   `client/src/pages/reports/` (web reports, track, user, garbage subpages)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add client/src/pages/staff/ client/src/pages/reports/
-    git commit -m "Ishwar [Day 4]: Add client staff action tools and report tracking dashboards"
-    git push origin ishwar
-    ```
+The centralized command hub where municipal authorities leverage AI-generated summaries, anomaly alerts, live maps, and satellite data to orchestrate city operations.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/kindshare/` (NGO Controllers: requests, ngo feedback, donations)
-    *   `server/src/controllers/donation.controller.js`
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add server/src/controllers/kindshare/ server/src/controllers/donation.controller.js
-    git commit -m "Arushi [Day 4]: Add backend controllers for KindShare and NGO donations"
-    git push origin arushi
-    ```
-
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/features/garbage/` (GarbageMap, Upload, cleanup verify UI)
-    *   `client/src/pages/features/reports/` (WaterMap, report maps, forms)
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client/src/pages/features/garbage/ client/src/pages/features/reports/
-    git commit -m "Shreyansh [Day 4]: Add client garbage and report submission features"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `client/src/store/` (Global auth states)
-    *   `client/src/hooks/` (Reverse geocoding hooks, maps loading triggers, sentinel audio sentinel)
-    *   `client/src/utils/` (userLocation map helpers, geocoding configs)
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client/src/store/ client/src/hooks/ client/src/utils/
-    git commit -m "Aryan [Day 4]: Add web client custom hooks, state stores, and util helpers"
-    git push origin aryan
-    ```
+<p align="center">
+  <img src="PLACEHOLDER_IMAGE_PATH_ADMIN_DASHBOARD" width="45%" alt="Admin master dashboard showing AI-triaged grievance totals, resolution rate gauges, category distribution pie charts, and an alert feed of high-urgency complaints">
+  <img src="PLACEHOLDER_IMAGE_PATH_ADMIN_MAP" width="45%" alt="Live complaint heatmap with geohash-clustered grievance pins, color-coded by AI-determined severity, with a filter sidebar for department and date range">
+</p>
+<p align="center">
+  <img src="PLACEHOLDER_IMAGE_PATH_GEOSCOPE" width="45%" alt="GeoScope satellite monitoring panel displaying NO2 pollution density bands, urban heat island thermal overlays, and deforestation change detection output from Google Earth Engine">
+  <img src="PLACEHOLDER_IMAGE_PATH_ADMIN_NGO" width="45%" alt="KindShare NGO admin portal showing active donation listings, AI-matched NGO assignments, pickup scheduling calendar, and impact statistics">
+</p>
+<p align="center">
+  <em>Top: AI-Triaged Master Dashboard and Live Complaint Heatmap · Bottom: GeoScope Satellite Intelligence and KindShare NGO Coordination Portal</em>
+</p>
 
 ---
 
-### Day 5: June 20, 2026
+### Civic Intelligence Dashboard — AI Leadership Module
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `client/src/components/urbanFlow/` (UrbanFlow main dashboard view)
-    *   `client/src/components/RegionSelector.jsx`
-    *   `client/src/components/feature-panel.jsx`
-    *   `client/src/components/google-map.jsx`
-    *   `client/src/components/google-map1.jsx`
-    *   `client/src/components/safety-onboarding.jsx`
-    *   `client/src/components/NotificationFeed.jsx`
-    *   `client/src/pages/administration/muncipal/` (Municipal action assignments and maps)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add client/src/components/urbanFlow/ client/src/components/RegionSelector.jsx client/src/components/feature-panel.jsx client/src/components/google-map.jsx client/src/components/google-map1.jsx client/src/components/safety-onboarding.jsx client/src/components/NotificationFeed.jsx client/src/pages/administration/muncipal/
-    git commit -m "Ishwar [Day 5]: Add common dashboard maps, selectors, onboarding widgets, and municipal pages"
-    git push origin ishwar
-    ```
+A dedicated AI decision-support surface for local leaders and administrators, surfacing ground realities from both citizen-reported data and civic social media signals.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `server/src/routes/kindshare/` (NGO endpoints)
-    *   `server/src/routes/donation.routes.js`
-    *   `server/src/services/kindshare/` (NGO DB transaction scripts, auto emailers)
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add server/src/routes/kindshare/ server/src/routes/donation.routes.js server/src/services/kindshare/
-    git commit -m "Arushi [Day 5]: Add KindShare NGO backend router and email/db services"
-    git push origin arushi
-    ```
-
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/features/jobs/` (StreetGig web client maps, job list cards)
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client/src/pages/features/jobs/
-    git commit -m "Shreyansh [Day 5]: Add StreetGig client job listings and boards UI"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `client/src/pages/administration/DepartmentComplaintMap.jsx`
-    *   `client/src/pages/administration/ComplaintsMapAdmin.jsx`
-    *   `client/src/pages/administration/garbage/` (Garbage admin portals)
-    *   `client/src/pages/administration/women/`
-    *   `client/src/pages/administration/client__women_admin/`
-    *   `client/src/components/gee/` (Google Earth Engine dashboard cards)
-    *   `client/src/pages/features/women/` (Women features, Commute maps, SOS panel)
-    *   `client/src/pages/administration/gee/` (GEE admin pages, charts, flood, deforestation maps)
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client/src/pages/administration/DepartmentComplaintMap.jsx client/src/pages/administration/ComplaintsMapAdmin.jsx client/src/pages/administration/garbage/ client/src/pages/administration/women/ client/src/pages/administration/client__women_admin/ client/src/components/gee/ client/src/pages/features/women/ client/src/pages/administration/gee/
-    git commit -m "Aryan [Day 5]: Add department administration maps, women safety admin, GEE controls, and pages"
-    git push origin aryan
-    ```
+<p align="center">
+  <img src="PLACEHOLDER_IMAGE_PATH_LEADERSHIP_OVERVIEW" width="45%" alt="Leadership AI overview dashboard showing top 10 prioritized issues ranked by AI urgency composite score, with impact radius estimates and recurrence frequency">
+  <img src="PLACEHOLDER_IMAGE_PATH_SENTIMENT_ANALYSIS" width="45%" alt="Social media sentiment analysis panel with a real-time emotion timeline, topic clustering of citizen discussions, misinformation alert cards, and ward-level trust score">
+</p>
+<p align="center">
+  <img src="ReadmeMedia/React_Native/civic_connect/AI_Verification.jpeg" width="45%" alt="Field work verification screen showing uploaded photo proof from a worker with AI-generated authenticity score, GPS coordinate overlaid on map, and timestamp validation badge">
+  <img src="PLACEHOLDER_IMAGE_PATH_PUBLIC_COMM" width="45%" alt="AI public communication generator showing a drafted official announcement with supporting data citations, sentiment impact estimate, and a one-click publish panel">
+</p>
+<p align="center">
+  <em>Top: AI Issue Prioritization Engine and Citizen Sentiment Monitor · Bottom: AI Field Work Verifier and AI Communication Generator</em>
+</p>
 
 ---
 
-### Day 6: June 21, 2026
+### Staff and On-Ground Worker Interface
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `client-native/store/` (Mobile notification store, mobile authentication store)
-    *   `client-native/auth/` (Expo Auth0 provider and logout helpers)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add client-native/store/ client-native/auth/
-    git commit -m "Ishwar [Day 6]: Add mobile client authentication state managers and stores"
-    git push origin ishwar
-    ```
+Purpose-built views for municipal workers, fire staff, and first responders. AI assigns, routes, and verifies tasks — reducing administrative overhead to near zero.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/women/` (Women voice analysis, room triggers, SOS audio controllers: `voiceAnalysisController.js`, `voiceController.js`, `roomController.js`, `room_data.js`, `getalertdetails.js`)
-    *   `client-native/app/kindshare/` (Mobile KindShare NGO portal: receiver categories, donor categorization, complaints, requests, feedback forms)
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add server/src/controllers/women/voiceAnalysisController.js server/src/controllers/women/voiceController.js server/src/controllers/women/roomController.js server/src/controllers/women/room_data.js server/src/controllers/women/getalertdetails.js client-native/app/kindshare/
-    git commit -m "Arushi [Day 6]: Add backend voice SOS, rooms controllers and mobile KindShare pages"
-    git push origin arushi
-    ```
-
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client-native/package.json`
-    *   `client-native/package-lock.json`
-    *   `client-native/metro.config.js`
-    *   `client-native/babel.config.js`
-    *   `client-native/tsconfig.json`
-    *   `client-native/eslint.config.js`
-    *   `client-native/nativewind-env.d.ts`
-    *   `client-native/app.json`
-    *   `client-native/eas.json`
-    *   `client-native/requirement.txt`
-    *   `client-native/.gitignore`
-    *   `client-native/README.md`
-    *   `client-native/example.env`
-    *   `client-native/tailwind.config.js`
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client-native/package.json client-native/package-lock.json client-native/metro.config.js client-native/babel.config.js client-native/tsconfig.json client-native/eslint.config.js client-native/nativewind-env.d.ts client-native/app.json client-native/eas.json client-native/requirement.txt client-native/.gitignore client-native/README.md client-native/example.env client-native/tailwind.config.js
-    git commit -m "Shreyansh [Day 6]: Add native app configs, tsconfigs, and dependencies list"
-    git push origin shreyansh
-    ```
-
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `client-native/lib/` (Auth0 client native bindings, API request setups, native firebase connector)
-    *   `client-native/utils/` (Mobile geo coordinates solver, schemes settings)
-    *   `client-native/assets/` (Mobile UI images and map icons)
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client-native/lib/ client-native/utils/ client-native/assets/
-    git commit -m "Aryan [Day 6]: Add native helper libraries, geocoding utils, and local assets/icons"
-    git push origin aryan
-    ```
+<p align="center">
+  <img src="ReadmeMedia/React_Native/civic_connect/Resolution_timeline.jpeg" width="45%" alt="Field worker task queue screen showing assigned grievances with AI-determined priority badges, distance from current GPS location, estimated travel time, and a one-tap navigation button">
+  <img src="ReadmeMedia/React_Native/civic_connect/Resolution_Verification.jpeg" width="45%" alt="Task resolution upload screen where the worker submits a geo-tagged, time-stamped photo. AI validates image authenticity and content match before marking the grievance resolved">
+</p>
+<p align="center">
+  <em>Left: AI-Prioritized Task Queue with live routing · Right: AI-Validated Photo Proof of Resolution</em>
+</p>
 
 ---
 
-### Day 7: June 22, 2026
+## Detailed Feature Breakdown
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/complaint.controller.js`
-    *   `server/src/controllers/complaintStats.controller.js`
-    *   `server/src/controllers/complaintHistory.controller.js`
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add server/src/controllers/complaint.controller.js server/src/controllers/complaintStats.controller.js server/src/controllers/complaintHistory.controller.js
-    git commit -m "Ishwar [Day 7]: Add backend handlers for complaints submission, stats and histories"
-    git push origin ishwar
-    ```
+### 1. SisterHood — AI-Powered Personal Safety & Emergency Response
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `server/src/routes/voiceRoutes.js`
-    *   `server/src/routes/room.js`
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add server/src/routes/voiceRoutes.js server/src/routes/room.js
-    git commit -m "Arushi [Day 7]: Add voice analysis API endpoints and rooms routing"
-    git push origin arushi
-    ```
+SisterHood is a real-time safety platform built on continuous AI inference and decentralized emergency coordination, primarily targeting women navigating urban environments.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client-native/app/index.jsx`
-    *   `client-native/app/(main)/index.jsx`
-    *   `client-native/app/(main)/(tabs)/_layout.jsx`
-    *   `client-native/app/_layout.jsx`
-    *   `client-native/app/(main)/_layout.jsx`
-    *   `client-native/app/about.jsx`
-    *   `client-native/app/global.css`
-    *   `client-native/app/mission.jsx`
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client-native/app/index.jsx client-native/app/(main)/index.jsx client-native/app/(main)/(tabs)/_layout.jsx client-native/app/_layout.jsx client-native/app/(main)/_layout.jsx client-native/app/about.jsx client-native/app/global.css client-native/app/mission.jsx
-    git commit -m "Shreyansh [Day 7]: Add mobile main layouts, root configurations, about and mission pages"
-    git push origin shreyansh
-    ```
+**AI Safe Route Engine**
+The routing system goes entirely beyond standard shortest-path GPS algorithms. It ingests a multi-factor safety index composed of: historical incident heatmaps sourced from civic reports and police APIs, real-time crowd density derived from anonymized location clustering, street lighting intensity scores mapped from satellite imagery, and time-of-day risk modifiers. A trained ML scoring model combines these features into a per-segment safety score, which is fed into a modified Dijkstra's algorithm that optimizes for safety-weighted cost rather than pure distance. The resulting route is rendered on a risk-heatmap overlay so the user can understand why a path was chosen.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `server/package.json`
-    *   `server/package-lock.json`
-    *   `server/index.js`
-    *   `server/app.js`
-    *   `server/example.env`
-    *   `server/requirements.txt`
-    *   `server/serviceAccountKey.json`
-    *   `server/.vscode`
-    *   `server/config/cloudinary.js`
-    *   `server/config/env.js`
-    *   `server/uploads/`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add server/package.json server/package-lock.json server/index.js server/app.js server/example.env server/requirements.txt server/serviceAccountKey.json server/.vscode server/config/cloudinary.js server/config/env.js server/uploads/
-    git commit -m "Aryan [Day 7]: Add backend entry points, env files, vscode configurations, and uploads"
-    git push origin aryan
-    ```
+**Acoustic Distress AI Monitor**
+Running entirely on-device using a lightweight TensorFlow Lite classification model, the acoustic monitor continuously processes microphone input at 16kHz via a sliding 3-second buffer. The model, trained on a labeled dataset of distress vocalizations, trigger words, and ambient soundscapes, outputs a confidence score every second. When confidence exceeds a configurable threshold for multiple consecutive frames, the system autonomously escalates to a full SOS workflow — requiring zero physical user interaction. This design is specifically intended for scenarios where manual SOS activation is impossible.
+
+**Decentralized Emergency Response Network**
+Upon SOS activation, three parallel actions are triggered simultaneously: (1) A POST to the backend API logs the incident with GPS coordinates, user identity, and a Firebase RTDB write that broadcasts to subscribed police dispatch systems. (2) A geofenced push notification broadcasts to a radius of nearby verified UrbanFlow users who opt into the community responder network, enabling immediate bystander assistance before official units arrive. (3) The SisterHood map surface activates a live tracking session, allowing trusted contacts to follow the user's location in real-time.
+
+**Companion Route Matching**
+An AI matching algorithm identifies other verified users traveling the same route within a ±10-minute departure window using vector similarity on encoded route segments. Users are matched and offered opt-in real-time coordination, creating a dynamic, organic safety network without requiring pre-registration of contacts.
 
 ---
 
-### Day 8: June 23, 2026
+### 2. CivicConnect (EcoSnap) — AI-Triaged Unified Grievance Reporting
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/saveReports/` (Report save, admin fire history logs, water/waste checks: `saveFireReport.js`, `fetchAdminFireHistory.js`, `localityCheck/infraCheck.js`, `localityCheck/wasteCheck.js`, `localityCheck/waterCheck.js`, `localityCheck/electrictiyCheck.js`)
-    *   `server/src/controllers/fetchReports/` (`fetch3Reports.js`)
-    *   `server/src/controllers/report/report.controller.js`
-    *   `server/src/controllers/user/getRepots.js`
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add server/src/controllers/saveReports/ server/src/controllers/fetchReports/ server/src/controllers/report/report.controller.js server/src/controllers/user/getRepots.js
-    git commit -m "Ishwar [Day 8]: Add report database saving endpoints, report controllers and user report retrievers"
-    git push origin ishwar
-    ```
+CivicConnect replaces the highly siloed and manual approach to municipal complaints with a fully AI-automated pipeline covering waste management, electricity faults, water supply, road infrastructure, and fire safety.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `agents/brain/vyomai/tools/kindshare.py`
-    *   `agents/test_kindshare_tools.py`
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add agents/brain/vyomai/tools/kindshare.py agents/test_kindshare_tools.py
-    git commit -m "Arushi [Day 8]: Add KindShare tool integrations for vyomai LLM agent"
-    git push origin arushi
-    ```
+**Multimodal AI Intake**
+Citizens can file grievances using image uploads, free-text descriptions, or voice note transcription (converted to text via OpenAI Whisper). A vision-language AI model (built on Google Cloud Vertex AI) performs joint analysis on image + text, extracting: issue type classification, severity level (1–5), estimated impact area, and a plain-English description of what it detects (e.g., "Overflowing municipal dumpster with standing water visible"). This AI-generated structured record replaces the manual data entry step entirely.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client-native/app/(main)/(tabs)/StreetGig/` (StreetGig citizen jobs, Chats list, create listings, profile setups)
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client-native/app/(main)/(tabs)/StreetGig/
-    git commit -m "Shreyansh [Day 8]: Add mobile StreetGig job listing components and forms"
-    git push origin shreyansh
-    ```
+**Intelligent Spam and Irrelevance Filtering**
+Before any grievance touches the municipal database, it passes through a multi-stage AI filter pipeline. Stage 1: a binary image relevance classifier rejects non-civic images (selfies, generic photos). Stage 2: a duplicate detection model using perceptual hashing and NLP embedding similarity identifies reports that are near-duplicates of existing open grievances and merges them rather than creating new records. Stage 3: a quality scoring model rejects submissions where the AI confidence is below threshold, prompting the citizen to re-upload with a clear image.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `server/src/firebaseadmin/` (Node.js Firebase Admin wrapper setup)
-    *   `server/src/config/` (MongoDB connection hooks, Redis caching wrapper client)
-    *   `server/src/auth/` (Passport / JWToken auth verify middleware)
-    *   `server/src/utils/` (Server helper files: `uploadToFirebase.js`, `sendEmail.js`, `apiResponse.js`, `apiError.js`, `aysncHandler.js`, `uploadVoiceCloudinary.js`, `cronJobs.js`, `pushNotification.js`, `startQueueWorker.js`, `uploadCloudinary.js`)
-    *   `server/middlewares/upload.js`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add server/src/firebaseadmin/ server/src/config/ server/src/auth/ server/src/utils/ server/middlewares/upload.js
-    git commit -m "Aryan [Day 8]: Add firebase admin initialization, database links, auth middlewares, and common utils"
-    git push origin aryan
-    ```
+**Automated Departmental Routing and Assignment**
+Verified complaints are automatically routed to the correct department (sanitation, electricity, road, fire, water) using a multi-label classification model. Within each department, the system queries the spatial index of available field workers and assigns the complaint to the nearest worker whose current task queue permits. Assignment is written to the worker's Firebase RTDB task feed in real-time.
+
+**AI Resolution Verification**
+When a field worker marks a grievance resolved and uploads photographic proof, an AI verification agent performs a before/after spatial consistency check: it validates that the photo GPS coordinates match the grievance location, checks timestamp authenticity via metadata, and runs a visual similarity model to confirm that the reported issue (e.g., pothole, dumpster overflow) is no longer visible in the submitted image. Only AI-approved submissions update the grievance status — preventing false resolution.
 
 ---
 
-### Day 9: June 24, 2026
+### 3. GeoScope — AI-Augmented Satellite Environmental Intelligence
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/updateReports/` (Updates for: fireUpdate, wasteUpdate, electricityUpdate, infraUpdate, waterUpdate)
-    *   `server/src/controllers/localityCheck/` (Validation: infraCheck, wasteCheck, waterCheck, electrictiyCheck)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add server/src/controllers/updateReports/ server/src/controllers/localityCheck/
-    git commit -m "Ishwar [Day 9]: Add report update controllers and geo-locality validation systems"
-    git push origin ishwar
-    ```
+GeoScope is a macro-scale environmental monitoring system built on Google Earth Engine's petabyte-scale satellite data infrastructure, extended with custom AI inference pipelines.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   `agents/brain/voice_analysis_agent.py`
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git add agents/brain/voice_analysis_agent.py
-    git commit -m "Arushi [Day 9]: Add voice pattern and signal analysis agent pipeline"
-    git push origin arushi
-    ```
+**Atmospheric Pollution Monitoring**
+GeoScope ingests Sentinel-5P satellite imagery streamed through the Google Earth Engine JavaScript and Python APIs. An AI analysis pipeline processes band-specific absorption data (SO2, NO2, CO, aerosol optical depth) and generates interpolated pollution density maps at a 1km² grid resolution. These maps are updated on a configurable cadence and overlaid on the administrative dashboard with AI-generated risk commentary explaining anomalies (e.g., a sudden NO2 spike near an industrial zone flagged as a potential regulatory violation).
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client-native/app/(main)/(tabs)/CivicConnect/`
-    *   `client-native/app/(main)/(tabs)/urbanconnect/` (Post creation, comment sheets, explore channels)
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client-native/app/(main)/(tabs)/CivicConnect/ client-native/app/(main)/(tabs)/urbanconnect/
-    git commit -m "Shreyansh [Day 9]: Add mobile CivicConnect and urbanconnect feed pages"
-    git push origin shreyansh
-    ```
+**Urban Heat Island (UHI) Detection**
+The system processes Landsat-8 thermal infrared band data to compute Land Surface Temperature (LST) using the Split-Window Algorithm. An AI segmentation model identifies urban heat island zones by comparing LST against the city's mean baseline and flags areas exceeding threshold differentials. These zones are cross-referenced with the city's infrastructure data to recommend targeted interventions: additional green cover, reflective roofing, or cooling infrastructure deployment.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `server/src/alerts/` (Coastal, deforestation, pollutants, flood, heat alarm triggers)
-    *   `server/src/controllers/gee/` (Google Earth Engine Landsat/Sentinel trackers)
-    *   `server/src/controllers/aiReports/` (AI analysis: auto-dispatch, fireReports, uncertainReports, infra/waste/water/electricity reports)
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add server/src/alerts/ server/src/controllers/gee/ server/src/controllers/aiReports/
-    git commit -m "Aryan [Day 9]: Add satellite GEE alerts processors and auto-dispatch logic"
-    git push origin aryan
-    ```
+**Flood Risk and Deforestation Change Detection**
+Using multi-temporal SAR (Synthetic Aperture Radar) imagery from Sentinel-1, GeoScope runs an AI change detection model that identifies surface water expansion events (potential flooding) with high temporal precision even through cloud cover — a limitation that prevents optical-only solutions. A separate NDVI (Normalized Difference Vegetation Index) differential model detects localized deforestation events between satellite acquisition cycles.
 
 ---
 
-### Day 10: June 25, 2026
+### 4. StreetGig — AI-Matched Micro-Employment Exchange
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/urbanconnect.controller.js`
-    *   `server/src/controllers/urbanconnect/` (CityPulse, Announcements feed, post clustering controllers)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add server/src/controllers/urbanconnect.controller.js server/src/controllers/urbanconnect/
-    git commit -m "Ishwar [Day 10]: Add urbanconnect pulse analysis and community feed managers"
-    git push origin ishwar
-    ```
+StreetGig is a hyperlocal AI-powered labor marketplace that connects daily wage workers, freelancers, and gig workers with immediate community needs using intelligent matching and skill intelligence.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   NGO / Voice SOS check validation
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git commit --allow-empty -m "Arushi [Day 10]: Verify all KindShare and NGO web/server files are in place"
-    git push origin arushi
-    ```
+**AI Worker-Job Matching via Embedding Vectors**
+Every worker profile is encoded into a semantic vector embedding — the "Master Profile Vector" — derived from their declared skills, job history, completed work descriptions, and AI-extracted competency signals from employer feedback. Every posted job is similarly embedded at creation time using OpenAI's embedding API. At recommendation time, the system computes cosine similarity between the worker's profile vector and all nearby open jobs, ranking results by a composite score of semantic similarity and haversine distance. This ensures that the jobs surfaced are both geographically accessible and genuinely matched to the worker's capabilities — not just keyword matches.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `client-native/components/` (Common UI items, FAB icons, features maps and complaint cards)
-    *   `client-native/app-example/` (Native boilerplate examples)
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add client-native/components/ client-native/app-example/
-    git commit -m "Shreyansh [Day 10]: Add mobile common custom components, FABs, and boilerplates"
-    git push origin shreyansh
-    ```
+**Geohash-Based Proximity Indexing**
+Job discovery is powered by a geohash spatial indexing system at precision level 6 (~1.2km² cells). Each job is stored with both a geohash4 (broad area) and geohash6 (precise cell) index. Discovery queries fetch all jobs within the 9-cell geohash neighborhood of the user's current location in a single Firestore query, eliminating the need for expensive radius queries. Recommendation endpoints then apply the AI similarity and filter pipeline in-memory on this pre-fetched neighbourhood set.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/women/` (Women safety: `throttle_agent.js`, `throttle_room.js`, `agent2.js`, `women_model_layer1.js`, `log-sos.js`, `log-suspicious.js`) - *staged as specific files to avoid overlapping with Arushi's controllers.*
-    *   `server/src/controllers/user.controller.js`
-    *   `server/src/controllers/chat.controller.js`
-    *   `server/src/controllers/interest.controller.js`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add server/src/controllers/women/throttle_agent.js server/src/controllers/women/throttle_room.js server/src/controllers/women/agent2.js server/src/controllers/women/women_model_layer1.js server/src/controllers/women/log-sos.js server/src/controllers/women/log-suspicious.js server/src/controllers/user.controller.js server/src/controllers/chat.controller.js server/src/controllers/interest.controller.js
-    git commit -m "Aryan [Day 10]: Add women safety SOS logger, and main user, chat, interest controllers"
-    git push origin aryan
-    ```
+**AI Skill Gap Analysis and Scheme Recommendation**
+After a job is closed, the employer submits structured feedback through an AI-generated feedback form (tailored per job category). An AI agent processes the ratings, feedback descriptions, and job outcomes to generate a skill gap string that identifies specific competency deficits (e.g., "Lacks knowledge of load-bearing calculations for carpentry"). These skill gap tags accumulate over a worker's history. A separate recommendation agent then matches these gaps against a database of 150+ government upskilling schemes and training programs, surfacing the most relevant ones in the StreetGig Schemes modal — categorized as Upgradation Courses (matching existing strengths) and Improvement Courses (addressing identified gaps).
+
+**Worker Discoverability and Employer-Side AI Matching**
+Employers posting jobs trigger a background AI worker discovery task. The system queries all active workers with `interestedToWork: true` matching the job's category, scores each worker's profile vector against the job embedding via cosine similarity, and returns a ranked shortlist of ideal candidates. Employers can initiate direct job-specific chat rooms with matched workers, with room metadata pre-populated with job terms for transparency.
 
 ---
 
-### Day 11: June 26, 2026
+### 5. KindShare — AI-Coordinated Resource Redistribution
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `server/src/routes/complaint.routes.js`
-    *   `server/src/routes/complaintStats.routes.js`
-    *   `server/src/routes/complaintHistory.routes.js`
-    *   `server/src/routes/urbanconnect.route.js`
-    *   `server/src/routes/cityPulse.routes.js`
-    *   `server/src/routes/announcement.routes.js`
-    *   `server/src/routes/mapReports.js`
-    *   `server/src/routes/garbageReports.js`
-    *   `server/src/routes/locality.routes.js`
-    *   `server/src/routes/setalertsRoutes.js`
-    *   `server/src/models/urbanconnect/` (Social pulse schemas)
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add server/src/routes/complaint.routes.js server/src/routes/complaintStats.routes.js server/src/routes/complaintHistory.routes.js server/src/routes/urbanconnect.route.js server/src/routes/cityPulse.routes.js server/src/routes/announcement.routes.js server/src/routes/mapReports.js server/src/routes/garbageReports.js server/src/routes/locality.routes.js server/src/routes/setalertsRoutes.js server/src/models/urbanconnect/
-    git commit -m "Ishwar [Day 11]: Add backend complaint and urbanconnect routes and models"
-    git push origin ishwar
-    ```
+KindShare is a hyper-local logistics intelligence system that uses AI to eliminate resource waste and accelerate the delivery of essential goods to vulnerable populations.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   NGO/Voice SOS routes final verification
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git commit --allow-empty -m "Arushi [Day 11]: Final check of NGO controllers, routes, and services"
-    git push origin arushi
-    ```
+**AI-Assisted Donation Matching**
+When a donor lists items (food, clothing, household goods), an AI classification model extracts item attributes, estimates shelf life for perishable goods, and constructs a structured inventory record. A matching agent then identifies the most suitable NGO recipient based on: geographic proximity, the NGO's declared current needs, verified capacity to handle the donation volume, and historical fulfillment reliability scores. Time-critical matches (perishable food) are weighted by urgency coefficient, ensuring hot meals and fresh produce reach NGOs within the minimum viable window.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   `server/src/controllers/garbage.controller.js`
-    *   `server/src/controllers/blocks.controller.js`
-    *   `server/src/routes/garbage.route.js`
-    *   `server/src/routes/blocks.route.js`
-    *   `server/src/routes/waste.route.js`
-    *   `server/src/routes/job.route.js`
-    *   `server/src/services/garbage.service.js`
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git add server/src/controllers/garbage.controller.js server/src/controllers/blocks.controller.js server/src/routes/garbage.route.js server/src/routes/blocks.route.js server/src/routes/waste.route.js server/src/routes/job.route.js server/src/services/garbage.service.js
-    git commit -m "Shreyansh [Day 11]: Add backend garbage, waste, job boards and blocks controllers, services, and routes"
-    git push origin shreyansh
-    ```
+**Automated Pickup Logistics**
+Upon donor-NGO match confirmation, the system automatically generates a pickup scheduling proposal based on the donor's listed availability windows and the NGO's operational hours. A confirmation notification is dispatched to both parties via Firebase Cloud Messaging. For large-volume donations, the system identifies and coordinates a volunteer or partner logistics provider within the same geohash zone.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   Server routes: `geeRoutes.js`, `model.js`, `chat.routes.js`, `interest.routes.js`, `auth.js`, `report.routes.js`, `staff.js`, `user.routes.js`, `track.route.js`, `notification.route.js`, `departmentMap.routes.js`, `civicAnalytics.routes.js`
-    *   GEE Engine scripts: `server/src/gee/` (deforestation, pollutants, flood, coastal erosion, fire viirs monitor)
-    *   Core services and crons: `server/src/services/` (`syncReportStatus.js`, `uploadImage.js`, `autoDispatch.js`, `civicSyndication.js`), `server/src/cron/` (`autoDispatchCron.js`)
-    *   Server administration and staff handlers: `server/src/controllers/track/`, `server/src/controllers/notification/`, `server/src/controllers/administration/`, `server/src/controllers/staff/`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add server/src/routes/geeRoutes.js server/src/routes/model.js server/src/routes/chat.routes.js server/src/routes/interest.routes.js server/src/routes/auth.js server/src/routes/report.routes.js server/src/routes/user.routes.js server/src/routes/track.route.js server/src/routes/staff.js server/src/routes/notification.route.js server/src/routes/departmentMap.routes.js server/src/routes/civicAnalytics.routes.js server/src/gee/ server/src/services/syncReportStatus.js server/src/services/uploadImage.js server/src/services/autoDispatch.js server/src/services/civicSyndication.js server/src/cron/ server/src/controllers/track/ server/src/controllers/notification/ server/src/controllers/administration/ server/src/controllers/staff/
-    git commit -m "Aryan [Day 11]: Add server routing for GEE, chat, users, tracking, notification, and services/crons"
-    git push origin aryan
-    ```
+**Impact Analytics for Administrators**
+The KindShare admin portal exposes AI-generated impact summaries: estimated meals provided, kilograms of goods redistributed, CO2 saved from food waste diversion, and NGO utilization rates. These metrics are updated in real-time as donations are confirmed and verified.
 
 ---
 
-### Day 12: June 27, 2026
+### 6. UrbanConnect — AI-Moderated Civic Social Layer
 
-#### 🌅 Morning: Ishwar (Branch: `ishwar`)
-*   **Target Files/Folders**:
-    *   `agents/brain/civicconnect/` (CivicConnect AI agents, waste, water, infra agents)
-    *   `agents/brain/urbanconnect/` (UrbanConnect clustering and Pulse checking AI agents)
-    *   `agents/brain/resolveWasteAgent.py`
-*   **Git Commands**:
-    ```bash
-    git checkout ishwar
-    git add agents/brain/civicconnect/ agents/brain/urbanconnect/ agents/brain/resolveWasteAgent.py
-    git commit -m "Ishwar [Day 12]: Add CivicConnect and UrbanConnect AI agent logic and scrapers"
-    git push origin ishwar
-    ```
+UrbanConnect is a structured civic discourse platform where residents discuss local issues, share information, and engage with each other — with AI moderation ensuring quality and safety.
 
-#### ☀️ Afternoon: Arushi (Branch: `arushi`)
-*   **Target Files/Folders**:
-    *   Final verify
-*   **Git Commands**:
-    ```bash
-    git checkout arushi
-    git commit --allow-empty -m "Arushi [Day 12]: Verify branch and prepare for merge to main"
-    git push origin arushi
-    ```
+**Threaded Discussion with AI Content Moderation and Fact-Checking**
+UrbanConnect supports nested threaded comments with upvote/downvote voting (one vote per user per item, enforced via server-side user+item keyed deduplication). All submitted posts and comments pass through a multi-stage AI pipeline:
+1. **Triage & Sentiment**: Determines post sentiment and identifies the post type.
+2. **Vectorize & Cluster**: Generates 768d embeddings to detect similar recent posts in the MongoDB vector store.
+3. **RAG Fact-Check**: For "MACRO_CLAIM" post types, verifies the claim against official civic announcements.
 
-#### 🌆 Evening: Shreyansh (Branch: `shreyansh`)
-*   **Target Files/Folders**:
-    *   Final verify
-*   **Git Commands**:
-    ```bash
-    git checkout shreyansh
-    git commit --allow-empty -m "Shreyansh [Day 12]: Verify branch and prepare for merge to main"
-    git push origin shreyansh
-    ```
+Flagged content or misinformation is automatically annotated or suppressed pending review rather than deleted, preserving auditability.
 
-#### 🌃 Night: Aryan (Branch: `aryan`)
-*   **Target Files/Folders**:
-    *   Mobile applications features: `client-native/app/(main)/(tabs)/SisterHood/`, `client-native/app/(main)/fire-staff/`, `client-native/app/(main)/track/[id].jsx`
-    *   Agents core setup configurations: `agents/.gitignore`, `agents/.vscode`, `agents/example.env`, `agents/requirements.txt`, `agents/main.py`, `agents/test_api.py`, `agents/test_embed.py`, `agents/scripts/`
-    *   AI agents scripts: `agents/brain/__init__.py`, `agents/brain/agent3.py`, `agents/brain/embedding_agent.py`, `agents/brain/safety_agent.py`, `agents/brain/vyomai/__init__.py`, `agents/brain/vyomai/agent.py`, `agents/brain/vyomai/state.py`, `agents/brain/vyomai/tools/general.py`, `agents/brain/vyomai/tools/__init__.py`, `agents/brain/vyomai/tools/_constants.py`, `agents/brain/vyomai/tools/_http.py`, `agents/brain/vyomai/tools/civic.py`, `agents/brain/vyomai/tools/streetgig.py`, `agents/brain/vyomai/__pycache__/`, `agents/brain/vyomai/tools/__pycache__/`, `agents/brain/streetgig/`, `agents/brain/gee/`, `agents/brain/layel_1.py`, `agents/brain/layel_2.py`
-    *   Server testing setups: `server/seedAnnouncements.js`, `server/testSearch.js`, `server/testSearchBehavior.js`, `server/testRawAuthors.js`, `server/testQuestionVote.js`, `server/testDisplay.js`, `server/testFixAuthors.js`, `server/testProfile.js`, `server/testVote.js`, `server/testPopulation.js`, `server/testAdminData.js`
-*   **Git Commands**:
-    ```bash
-    git checkout aryan
-    git add client-native/app/(main)/(tabs)/SisterHood/ client-native/app/(main)/fire-staff/ client-native/app/(main)/track/[id].jsx agents/.gitignore agents/.vscode agents/example.env agents/requirements.txt agents/main.py agents/test_api.py agents/test_embed.py agents/scripts/ agents/brain/__init__.py agents/brain/agent3.py agents/brain/embedding_agent.py agents/brain/safety_agent.py agents/brain/vyomai/__init__.py agents/brain/vyomai/agent.py agents/brain/vyomai/state.py agents/brain/vyomai/tools/general.py agents/brain/vyomai/tools/__init__.py agents/brain/vyomai/tools/_constants.py agents/brain/vyomai/tools/_http.py agents/brain/vyomai/tools/civic.py agents/brain/vyomai/tools/streetgig.py agents/brain/vyomai/__pycache__/ agents/brain/vyomai/tools/__pycache__/ agents/brain/streetgig/ agents/brain/gee/ agents/brain/layel_1.py agents/brain/layel_2.py server/seedAnnouncements.js server/testSearch.js server/testSearchBehavior.js server/testRawAuthors.js server/testQuestionVote.js server/testDisplay.js server/testFixAuthors.js server/testProfile.js server/testVote.js server/testPopulation.js server/testAdminData.js
-    git commit -m "Aryan [Day 12]: Add SisterHood, fire-staff mobile apps, GEE/StreetGig AI agents, and server test scripts"
-    git push origin aryan
-    ```
-
----
-
-## Post-Migration Merging (End of Day 12)
-
-Once all time slots are completed, merge all four branches into the main branch sequentially to combine all components. Aryan will run the following commands:
-
-```bash
-git checkout main
-git merge ishwar --no-ff -m "Merge branch 'ishwar' into main"
-git merge arushi --no-ff -m "Merge branch 'arushi' into main"
-git merge shreyansh --no-ff -m "Merge branch 'shreyansh' into main"
-git merge aryan --no-ff -m "Merge branch 'aryan' into main"
-git push origin main
+**AI Analytics Architecture**
+```mermaid
+graph TD
+    A[User Posts on UrbanConnect] --> B[Node.js: createQuestion]
+    B --> C[MongoDB: Save Question]
+    B --> D["🔥 Fire-and-forget"]
+    D --> E["Python Agent: /analyze-post"]
+    E --> F["Node 1: Triage & Sentiment<br/>(Gemini 2.0 Flash)"]
+    F --> G["Node 2: Vectorize & Cluster<br/>(768d embedding + 12h window check)"]
+    G --> H{Post Type?}
+    H -->|MACRO_CLAIM| I["Node 3: RAG Fact-Check<br/>(Search announcements KB → LLM verify)"]
+    H -->|CIVIC_REPORT / GENERAL| J[Skip fact-check]
+    I --> K[MongoDB: Update Question.aiAnalysis]
+    J --> K
 ```
+
+**Data Flow Sequence**
+```mermaid
+sequenceDiagram
+    participant User
+    participant Client
+    participant NodeJS as Node.js Server
+    participant Agent as Python Agent (FastAPI)
+    participant MongoDB
+    participant LLM as Gemini 2.0 Flash
+
+    User->>Client: Submit Post (title, description, images)
+    Client->>NodeJS: POST /api/urbanconnect/ask
+    NodeJS->>MongoDB: Save Question document
+    NodeJS-->>Client: 201 Created (immediate response)
+    
+    Note over NodeJS: Fire-and-forget
+    NodeJS->>Agent: POST /analyze-post
+    
+    Agent->>LLM: Node 1: Triage & Sentiment
+    LLM-->>Agent: {sentiment, urgency, postType}
+    
+    Agent->>Agent: Node 2: Generate Embedding (768d)
+    Agent->>NodeJS: POST /api/urbanconnect/cluster-check
+    NodeJS->>MongoDB: Query recent posts, cosine similarity
+    NodeJS-->>Agent: {clusterId or null}
+    
+    alt postType == MACRO_CLAIM
+        Agent->>NodeJS: POST /api/announcements/search
+        NodeJS->>MongoDB: Vector search announcements
+        NodeJS-->>Agent: Top 5 matching announcements
+        Agent->>LLM: Node 3: Verify claim against official context
+        LLM-->>Agent: {isMisinformation, contextNote}
+    end
+    
+    Agent-->>NodeJS: Full analysis result
+    NodeJS->>MongoDB: Update Question.aiAnalysis
+```
+
+**Per-User Structured Voting Integrity**
+The voting system uses a server-side `Vote` model keyed on `userId + targetId + targetType`. Before recording a vote, the API checks for an existing record and either creates or toggles the vote, preventing manipulation via multiple submissions. Vote counts are aggregated in real-time and surfaced in the UI with directional trend indicators.
+
+---
+
+### 7. Civic Intelligence Dashboard — AI Decision Support for Local Leaders *(Category 3)*
+
+The Civic Intelligence Dashboard is UrbanFlow's dedicated answer to Category 3 — an AI-native leadership layer that transforms fragmented civic data into structured, actionable intelligence for local administrators and elected representatives.
+
+**Multi-Modal AI Issue Intake**
+Citizens and field workers can submit civic issues via voice (transcribed using OpenAI Whisper), free text (processed via NLP pipeline), or images (analyzed by vision AI). The AI structures all submissions into a uniform schema: location, category, severity, affected population estimate, and recurrence flag. Voice submissions are particularly important for reaching citizens with low digital literacy.
+
+**ML-Based Prioritization Engine**
+Every incoming issue is scored by a multi-factor ML model trained on historical civic data. The prioritization composite score weighs: urgency (time-sensitivity of the issue type), impact radius (number of citizens potentially affected based on geospatial clustering), recurrence frequency (how many times this issue type has been reported in this zone), and resource availability (current field worker capacity). The ranked issue queue is surfaced to leaders in a real-time leaderboard view, enabling immediate, data-driven prioritization without manual triage.
+
+**AI Field Work Verification**
+When field workers mark tasks complete and submit photo evidence, a multi-step AI verification pipeline runs: (1) GPS coordinate extraction and cross-validation against the task's target location, (2) timestamp metadata authenticity verification to detect clock manipulation, (3) computer vision content validation confirming the submitted image matches the expected post-resolution state (e.g., a cleared road after pothole repair), and (4) an overall authenticity confidence score. Only submissions exceeding the confidence threshold update the leader's execution status dashboard — preventing false reporting.
+
+**Social Media NLP Sentiment Pipeline**
+A continuous background agent scrapes and analyzes public social media signals from civic-relevant platforms. An NLP pipeline applies: sentiment classification (positive/negative/neutral) at the post level, topic modeling using Latent Dirichlet Allocation (LDA) to surface emerging local issues, and a misinformation detection model that flags posts contradicting verified civic records (e.g., a rumour that a road was repaired when it remains open in the system). Leaders receive a real-time sentiment timeline per ward, with AI-generated summaries of dominant citizen concerns.
+
+**AI Communication Generator**
+Leaders can generate verified, factual public announcements in seconds. The AI drafts communications grounded in live system data: resolution counts, pending grievances, scheme progress, and sentiment trends. A tone selector allows switching between formal (official notifications), empathetic (community outreach), and informational (status updates) styles. The AI adds supporting data citations inline, ensuring all public communications are transparent and verifiable. One-click publishing sends announcements to the official channel (push notification, civic portal, or SMS gateway).
+
+**Public Trust Index Dashboard**
+An aggregate real-time trust index is computed from three data streams: grievance resolution rate (percentage of reported issues resolved within SLA), citizen sentiment score (from the NLP pipeline), and scheme implementation progress (percentage of active government programs with verified progress records). This composite index is visualized per ward and per time period, giving leaders a measurable signal of public trust that can be tracked against their decisions.
+
+---
+
+## Technical Architecture
+
+UrbanFlow runs on a production-grade, fault-tolerant microservices architecture designed for high availability, real-time AI inference, and complex multi-agent orchestration at scale.
+
+### System Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      CLIENT LAYER                               │
+│  React Native Mobile App │ React.js Web Dashboard │ Staff PWA   │
+└───────────────┬─────────────────────────┬───────────────────────┘
+                │ HTTPS / WebSocket        │ Firebase RTDB
+┌───────────────▼──────────────────────────────────────────────────┐
+│                   API GATEWAY (Node.js / Express)                │
+│  Auth Middleware (Auth0 JWT)  │  Rate Limiting (Redis)           │
+│  REST Endpoints  │  Event Emitters  │  Webhook Receivers         │
+└──────────┬─────────────────────────────┬────────────────────────┘
+           │ HTTP / gRPC                  │ Message Queue (RabbitMQ)
+┌──────────▼──────────────────────────────────────────────────────┐
+│              AI INFERENCE ENGINE (Python / FastAPI)             │
+│  Multi-Agent Orchestration (LangChain)                          │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────────────┐  │
+│  │ Safety   │ │ Infra    │ │ Jobs     │ │ Leadership/      │  │
+│  │ Agent    │ │ Agent    │ │ Agent    │ │ Sentiment Agent  │  │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────────────┘  │
+│  Vision AI │ NLP Pipeline │ Embeddings │ Whisper Transcription  │
+└──────────┬──────────────────────────────────────────────────────┘
+           │
+┌──────────▼──────────────────────────────────────────────────────┐
+│                      DATA LAYER                                 │
+│  MongoDB (primary)  │  Firebase RTDB (real-time)  │ Redis       │
+│  Firestore (spatial)│  Cloudinary (media)         │ (cache)     │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Core Technology Stack
+
+| Layer | Technologies | Purpose |
+|---|---|---|
+| **Citizen Mobile App** | React Native, Expo, NativeWind | Cross-platform mobile with background task execution and GPS |
+| **Web Dashboard** | React.js (Vite), Tailwind CSS, Leaflet, Google Maps | Responsive, data-dense administrative interface |
+| **Primary API Gateway** | Node.js, Express.js | REST routing, auth, business logic, event emission |
+| **AI Inference Engine** | Python, FastAPI | ML model serving, multi-agent orchestration, vision processing |
+| **Primary Database** | MongoDB | Complex nested documents: grievances, profiles, analytics |
+| **Real-time Layer** | Firebase Realtime Database (RTDB) | Sub-100ms SOS signals, live staff tracking, chat |
+| **Spatial Database** | Firestore | Geohash-indexed job and alert records for proximity queries |
+| **Cache Layer** | Redis | Spatial query caching, API rate limiting, session store |
+| **AI Orchestration** | LangChain (Python) | Multi-agent networks, tool-use pipelines, chain-of-thought flows |
+| **LLM & Vision** | Google Cloud Vertex AI, OpenAI GPT-4o | Complaint analysis, skill gap inference, NL generation |
+| **Embeddings** | OpenAI `text-embedding-3-large` | Worker profile and job description vector encoding |
+| **Speech-to-Text** | OpenAI Whisper | Voice grievance transcription |
+| **Satellite Data** | Google Earth Engine (GEE) | Environmental monitoring, thermal analysis, SAR flood detection |
+| **Geospatial** | Google Maps Platform, ngeohash | Routing, geocoding, proximity indexing |
+| **Media Storage** | Cloudinary | Complaint images, profile photos, resolution proof upload |
+| **Auth** | Auth0 (JWT), Firebase Auth | Multi-platform authentication and session management |
+| **Push Notifications** | Firebase Cloud Messaging | Dispatch alerts, SOS broadcasts, status updates |
+| **Async Messaging** | RabbitMQ | Async task queues, background AI processing, notification dispatch |
+
+---
+
+### AI Pipeline Deep-Dives
+
+#### Multi-Agent Orchestration (LangChain)
+UrbanFlow uses LangChain to construct a network of specialized AI agents, each with access to domain-specific tools (database lookups, API calls, embedding computations). Agents are invoked via a routing chain that classifies incoming requests by domain and dispatches to the appropriate agent. Agents use ReAct (Reasoning + Acting) prompting patterns, enabling them to iteratively query tools, reason over intermediate outputs, and arrive at grounded decisions rather than hallucinated responses.
+
+#### Vector Embedding Architecture
+All semantic matching in UrbanFlow — job-worker matching, scheme-worker matching, and complaint deduplication — is powered by `text-embedding-3-large` embeddings stored as Firestore Vector fields. Similarity is computed server-side using cosine similarity in Python (NumPy), avoiding the need for a dedicated vector database at this scale while maintaining sub-200ms inference times.
+
+#### Geohash Spatial Indexing
+All location-dependent queries (nearby jobs, nearby grievances, proximity-based alerts) use ngeohash precision-4 (≈39km²) for broad neighborhood lookup and precision-6 (≈1.2km²) for precise proximity. This allows single-query retrieval of all records within a target area using Firestore's `IN` operator over the 9-cell geohash neighborhood, achieving O(1) spatial lookup complexity without geospatial indexes.
+
+#### Real-Time Firebase Architecture
+SOS events, task assignments, worker location pings, and chat messages are all managed through Firebase Realtime Database with structured path schemas:
+- `fireAlerts/{geohash}/{alertId}` — geo-indexed SOS records
+- `staff/fire/{geohash}/{truckId}/coords` — live truck GPS coordinates
+- `jobs/rooms/{chatRoomId}/members/{userId}` — per-room participant tracking
+- `userActiveAlerts/{userId}` — per-user active alert state for notification deduplication
+
+All RTDB listeners are attached at the component level and cleaned up on unmount, preventing memory leaks in long-running mobile sessions.
+
+---
+
+*UrbanFlow — Every citizen action intelligently processed. Every civic decision AI-informed. Built for the city of tomorrow.*
