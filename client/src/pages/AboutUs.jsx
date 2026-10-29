@@ -10,22 +10,10 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/ishwarkumawat/"
   },
   { 
-    name: "Arushi Nayak", 
-    email: "nayakarushi2005@gmail.com", 
-    image: "/src/ui/arushi.jpg",
-    linkedin: "https://www.linkedin.com/in/arushi-nayak-29299a344/"
-  },
-  { 
     name: "Aryan Gupta", 
     email: "aryan072806@gmail.com", 
     image: "/src/ui/aryan.jpg",
     linkedin: "https://www.linkedin.com/in/aryan-gupta-278376313/"
-  },
-  { 
-    name: "Shreyansh Sachan", 
-    email: "shreyansh.sachan@hotmail.com", 
-    image: "/src/ui/shreyansh.jpg",
-    linkedin: "https://www.linkedin.com/in/shreyansh-sachan/"
   },
 ];
 

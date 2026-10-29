@@ -10,8 +10,6 @@ const CARD_WIDTH = (width - 48 - 16) / 2; // Screen width minus padding minus ga
 const teamMembers = [
   { name: "Aryan Gupta", email: "aryan072806@gmail.com", image: require('../components/ui/aryan.jpg'), linkedin: "https://www.linkedin.com/in/aryan-gupta-278376313/" },
   { name: "Ishwar", email: "ishwarkumawat@gmail.com", image: require('../components/ui/ishwar.jpg'), linkedin: "https://www.linkedin.com/in/ishwarkumawat/" },
-  { name: "Arushi Nayak", email: "nayakarushi2005@gmail.com", image: require('../components/ui/arushi.jpg'), linkedin: "https://www.linkedin.com/in/arushi-nayak-29299a344/" },
-  { name: "Shreyansh Sachan", email: "shreyansh.sachan@hotmail.com", image: require('../components/ui/shreyansh.jpg'), linkedin: "https://www.linkedin.com/in/shreyansh-sachan/" },
 ];
 
 export default function AboutUs() {

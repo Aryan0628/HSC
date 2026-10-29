@@ -187,6 +187,17 @@ Upon donor-NGO match confirmation, the system automatically generates a pickup s
 **Impact Analytics for Administrators**
 The KindShare admin portal exposes AI-generated impact summaries: estimated meals provided, kilograms of goods redistributed, CO2 saved from food waste diversion, and NGO utilization rates. These metrics are updated in real-time as donations are confirmed and verified.
 
+```
+### Technical Deep-Dive
+
+| Component | Technology | Implementation |
+|:---|:---|:---|
+| **Parallel Domain Analysis** | LangGraph, Gemini 2.0 Flash | Specialist agents (Waste, Water, Infra, Electric) execute **parallel multimodality analysis** on grievance data. Each operates with strict jurisdictional prompts to prevent misclassification (e.g., structural road damage vs. loose debris). |
+| **Confidence Arbiter (Judge)** | Gemini 2.0 Flash, Structured Output | A "City Operations Supervisor" node reconciles parallel agent findings. It evaluates confidence scores, resolves overlaps (e.g., trash-clogged drains), and selects the winning category and severity level (LOW–CRITICAL). |
+| **Geospatial Duplicate Detection** | Geohash-7, Firestore | Before persistence, the system queries category-specific backend endpoints using **Geohash-7 proximity** to identify existing reports within a ~150m radius, preventing redundant municipal tickets. |
+| **Visual Duplicate Verification** | Gemini 2.0 Flash (Vision) | If a geohash match is found, Gemini performs **visual cross-verification** between the new submission and the existing record. `TRUE` triggers a report update/refresh; `FALSE` creates a unique new entry. |
+| **Category-Routed Storage** | Express API, Firestore | Verified grievances are auto-routed to department-specific collections (`waterReports`, `wasteReports`, etc.) for direct municipal action. Updates are merged via specialized `update*` endpoints. |
+| **Native Grievance Portal** | React Native, Expo, Cloudinary | A high-performance mobile interface with location gating, **Geohash-7 auto-tagging**, and Cloudinary-backed evidence hosting. Supports real-time tracking via a status lifecycle: INITIATED → ASSIGNED → RESOLVED → VERIFIED. |
 ---
 
 ### 6. UrbanConnect — AI-Moderated Civic Social Layer
