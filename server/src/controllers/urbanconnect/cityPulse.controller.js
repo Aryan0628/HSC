@@ -90,8 +90,8 @@ export const fetchAndAnalyzeCityPulse = async () => {
       (async () => {
         try {
           console.log("[APIFY] 🚀 Launching Google News Scraper...");
-          const gnPayload = { queries: ["Prayagraj news today", "Allahabad municipal issues"], maxItems: 10 };
-          return await apifyClient.actor("apify/google-news-scraper").call(gnPayload, runOptions);
+          const gnPayload = { queries: ["Prayagraj news today", "Allahabad municipal issues"], max_pages: 1 };
+          return await apifyClient.actor("johnvc/GoogleNewsAPI").call(gnPayload, runOptions);
         } catch (err) {
           console.error("[APIFY] ❌ News FAILED:", err.message);
           return null;
@@ -109,7 +109,8 @@ export const fetchAndAnalyzeCityPulse = async () => {
 
     const twitterItems = apifyDatasets[0].items || [];
     const redditItems = apifyDatasets[1].items || [];
-    const newsItems = apifyDatasets[2].items || [];
+    // One dataset item per result page; the articles are in news_results
+    const newsItems = (apifyDatasets[2].items || []).flatMap(page => page.news_results || []).slice(0, 20);
 
     const stats = `Tavily=${tavilyResults.length}, Twitter=${twitterItems.length}, Reddit=${redditItems.length}, News=${newsItems.length}`;
     logToFile(`Scrape Results: ${stats}`);
